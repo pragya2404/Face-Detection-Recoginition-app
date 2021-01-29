@@ -35,7 +35,7 @@ video.addEventListener('play',()=>{
         faceapi.draw.drawFaceLandmarks(canvas,resizedDetections)
         faceapi.draw.drawFaceExpressions(canvas,resizedDetections)
         resizedDetections.forEach( detection => {
-              const box = detection.detection.box
+              const box = resizedDetections.detection.box
               const drawBox = new faceapi.draw.DrawBox(box, { label: Math.round(detection.age) + " year old " + detection.gender })
               drawBox.draw(canvas)
     })        // console.log(detections)
